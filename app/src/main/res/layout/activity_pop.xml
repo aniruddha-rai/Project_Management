@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pop_bg"
+    tools:context=".PopActivity"
+    tools:layout_editor_absoluteX="5dp"
+    tools:layout_editor_absoluteY="97dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="CONFIGURATION"
+        android:textColor="@color/white"
+        android:textSize="10pt"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Name:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/mailName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Your Name..."
+        android:inputType="textCapSentences"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Email Id:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <EditText
+        android:id="@+id/mailS_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Sender's Mail Id..."
+        android:inputType="textEmailAddress"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Password:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="327dp" />
+
+    <EditText
+        android:id="@+id/mailPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Your Password..."
+        android:inputType="textPassword"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Host:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/mailHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Host Name..."
+        android:inputType="textCapSentences|textMultiLine"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Port:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/mailPort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Port No..."
+        android:inputType="number"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        android:text="Send To:"
+        android:textColor="@color/white"
+        android:textSize="7pt"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/mailR_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:hint="Enter Receiver's Mail Id..."
+        android:inputType="textEmailAddress"
+        android:minHeight="50dp"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/pop_bg"
+        android:onClick="buttonSendEmail"
+        android:text="Send"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>
