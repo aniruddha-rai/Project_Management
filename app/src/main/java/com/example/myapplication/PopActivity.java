@@ -15,6 +15,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Properties;
@@ -51,6 +53,31 @@ public class PopActivity extends Activity {
         mailPort = findViewById(R.id.mailPort);
         mailR_ID = findViewById(R.id.mailR_ID);
 
+        String path = (Environment.getExternalStorageDirectory()).getAbsolutePath() + "/My Files/MyConfig.txt";
+        int name = 0;
+        int senderMail = 1;
+        int pass = 2;
+        int host = 3;
+        int port = 4;
+        int receiverMail = 5;
+        try {
+            String name1 = Files.readAllLines(Paths.get(path)).get(name);
+            mailName.setText(name1);
+            String senderMail1 = Files.readAllLines(Paths.get(path)).get(senderMail);
+            mailS_ID.setText(senderMail1);
+            String pass1 = Files.readAllLines(Paths.get(path)).get(pass);
+            mailPass.setText(pass1);
+            String host1 = Files.readAllLines(Paths.get(path)).get(host);
+            mailHost.setText(host1);
+            String port1 = Files.readAllLines(Paths.get(path)).get(port);
+            mailPort.setText(port1);
+            String receiverMail1 = Files.readAllLines(Paths.get(path)).get(receiverMail);
+            mailR_ID.setText(receiverMail1);
+
+        } catch (IOException e) {
+            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -65,34 +92,10 @@ public class PopActivity extends Activity {
         params.y = -20;
 
         getWindow().setAttributes(params);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+//        params.dimAmount = 0.3f;
 
-//        String path = (Environment.getExternalStorageDirectory()).getAbsolutePath() + "/My Files/MyConfig.txt";
-//        int name = 0;
-//        int senderMail = 1;
-//        int pass = 2;
-//        int host = 3;
-//        int port = 4;
-//        int receiverMail = 5;
-//        try {
-//            BufferedReader br = new BufferedReader(new FileReader(path));
-//            String line = String.valueOf(br.read(CharBuffer.allocate(name)));
-//            mailName.setText(line);
-////            String name1 = Files.readAllLines(Paths.get(path)).get(name);
-////            mailName.setText(name1);
-////            String senderMail1 = Files.readAllLines(Paths.get(path)).get(senderMail);
-////            mailS_ID.setText(senderMail1);
-////            String pass1 = Files.readAllLines(Paths.get(path)).get(pass);
-////            mailPass.setText(pass1);
-////            String host1 = Files.readAllLines(Paths.get(path)).get(host);
-////            mailHost.setText(host1);
-////            String port1 = Files.readAllLines(Paths.get(path)).get(port);
-////            mailPort.setText(port1);
-////            String receiverMail1 = Files.readAllLines(Paths.get(path)).get(receiverMail);
-////            mailR_ID.setText(receiverMail1);
-//
-//        } catch (IOException e) {
-//            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
-//        }
+
 
     }
 

@@ -32,6 +32,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     int count=0;
+    int count1=0;
+    int count2=0;
     EditText mInputEt;
     Button mSaveBtn;
     EditText mInputEt_sp;
@@ -74,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         mSaveBtn_t = findViewById(R.id.saveBtn_t);
         sendEmail = findViewById(R.id.sendEmail);
 
-        mInputEt.setText("h");
-        mInputEt_sp.setText("");
-        mInputEt_t.setText("");
+//        mInputEt.setText("h");
+//        mInputEt_sp.setText("");
+//        mInputEt_t.setText("");
 
 //        For Sub-Project
         spinner = findViewById(R.id.spinner_languages);
@@ -113,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
                 mText = (String) adapterView.getItemAtPosition(i);
                 // To set the value which user select from the drop down list
                 mInputEt.setText(mText);
+                if (count==0) {
+                    mInputEt.setText("");
+                    count++;
+                }
                 Toast.makeText(MainActivity.this,""+adapterView.getItemAtPosition(i),Toast.LENGTH_SHORT).show();
             }
 
@@ -129,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
                 mText_sp = (String) adapterView.getItemAtPosition(i);
                 // To set the value which user select from the drop down list
                 mInputEt_sp.setText(mText_sp);
+                if (count1==0) {
+                    mInputEt_sp.setText("");
+                    count1++;
+                }
                 Toast.makeText(MainActivity.this,""+adapterView.getItemAtPosition(i),Toast.LENGTH_SHORT).show();
             }
 
@@ -146,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
                 // To set the value which user select from the drop down list
                 mInputEt_t.setText(mText_t);
                 Toast.makeText(MainActivity.this,""+adapterView.getItemAtPosition(i),Toast.LENGTH_SHORT).show();
+                if (count2==0) {
+                    mInputEt_t.setText("");
+                    Toast.makeText(MainActivity.this,"WELCOME!",Toast.LENGTH_SHORT).show();
+                    count2++;
+                }
             }
 
             @Override
